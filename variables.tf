@@ -43,5 +43,5 @@ variable "helm-custom-values" {
 variable "helm-custom-values-path" {
   description = "Helm Custom Values Path"
   type        = string
-  default     = ""
+  default     = "values.yaml"
 }
