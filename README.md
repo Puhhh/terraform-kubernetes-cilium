@@ -1,18 +1,48 @@
-# How to use
+<!-- BEGIN_TF_DOCS -->
+## Requirements
 
-* Change S3 values 
+No requirements.
 
-```bash
-terraform init
-```
-```bash
-terraform plan
-```
-```bash
-terraform apply
-```
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.14.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [helm_release.cilium](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cilium-namespace"></a> [cilium-namespace](#input\_cilium-namespace) | Cilium Namespace | `string` | `"kube-system"` | no |
+| <a name="input_helm-chart-name"></a> [helm-chart-name](#input\_helm-chart-name) | Helm Chart Name | `string` | `"cilium"` | no |
+| <a name="input_helm-chart-repo"></a> [helm-chart-repo](#input\_helm-chart-repo) | Helm Chart Repo | `string` | `"https://helm.cilium.io/"` | no |
+| <a name="input_helm-chart-version"></a> [helm-chart-version](#input\_helm-chart-version) | Helm Chart Version | `string` | `"1.15.6"` | no |
+| <a name="input_helm-custom-values"></a> [helm-custom-values](#input\_helm-custom-values) | Use Helm Custom Values | `bool` | `false` | no |
+| <a name="input_helm-custom-values-path"></a> [helm-custom-values-path](#input\_helm-custom-values-path) | Helm Custom Values Path | `string` | `"values.yaml"` | no |
+| <a name="input_helm-name"></a> [helm-name](#input\_helm-name) | Helm Release Name | `string` | `"cilium"` | no |
+| <a name="input_kubeconfig-path"></a> [kubeconfig-path](#input\_kubeconfig-path) | Kubeconfig Path | `string` | `"~/.kube/config"` | no |
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
+
+## How to use
+
+Change S3 values 
 
 ## Optional 
 
-* If you need to change the default values of variables, add them to the *terraform.tfvars* file.
-* If the value of *helm-custom-values* is *true*, *values.yaml* will be used. You can modify *values.yaml*.
+If you need to change the default values of variables, add them to the *terraform.tfvars* file.
+
+If the value of *helm-custom-values* is *true*, *values.yaml* will be used. You can modify *values.yaml*.
