@@ -1,4 +1,6 @@
 terraform {
+  required_version = ">= 0.13"
+
   required_providers {
     kubernetes = {
       source = "hashicorp/kubernetes"
@@ -7,12 +9,6 @@ terraform {
     helm = {
       source = "hashicorp/helm"
     }
-  }
-
-  backend "s3" {
-    bucket = "terraform-kubernetes-puhhh-s3"
-    key    = "test/cilium/terraform.tfstate"
-    region = "eu-north-1"
   }
 }
 
